@@ -1,0 +1,51 @@
+{
+  "image": "harbor2.vantage6.ai/demo/average:latest",
+  "functions": [
+    {
+      "ui_visualizations": [],
+      "type": "central",
+      "databases": [
+        {
+          "description": "",
+          "name": "Main database"
+        }
+      ],
+      "description": "Compute average for a number of parties",
+      "arguments": [
+        {
+          "type": "column",
+          "description": "Name of column to compute average over",
+          "name": "column_name"
+        }
+      ],
+      "name": "central_average"
+    },
+    {
+      "ui_visualizations": [],
+      "type": "federated",
+      "databases": [
+        {
+          "description": "",
+          "name": "Main database"
+        }
+      ],
+      "description": "Return the data for one party so that central party can compute final average",
+      "arguments": [
+        {
+          "type": "column",
+          "description": "Name of the column to calculate average for",
+          "name": "column_name"
+        }
+      ],
+      "name": "partial_average"
+    }
+  ],
+  "description": "",
+  "reviews": "/api/review?algorithm_id=1",
+  "vantage6_version": "4.0",
+  "documentation_url": null,
+  "developer_id": null,
+  "code_url": "http://algorithm.com",
+  "partitioning": "horizontal",
+  "name": "Average"
+}
